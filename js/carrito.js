@@ -15,10 +15,19 @@ let tbody = document.querySelector("#lCarrito")
     
     document.querySelector("#totalCarrito").innerText="$" + totalCarrito; 
 
+function mostrarCarrito () {
+};
+    
+
+let eliminarCarrito = document.querySelector(".imagenDelete")
+
+if (eliminarCarrito.addEventListener("click", () => {
+    localStorage.removeItem("listaCarrito");
+}));
+
+
 
     
-    function mostrarCarrito () {
-    };
 
 
 

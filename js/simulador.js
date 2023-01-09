@@ -11,9 +11,10 @@ const listaProductos = [
 ]
 let listaCarrito = [];
 let carrito = JSON.parse(localStorage.getItem("listaCarrito"))
-if (carrito.length > 0) {
+if (carrito != null && carrito.length > 0) {
     listaCarrito = carrito;
 }
+
 let span = document.getElementById("span")
 span.textContent = listaCarrito.length
 

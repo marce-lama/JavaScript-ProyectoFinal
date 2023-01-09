@@ -72,3 +72,23 @@ body {
 .carrito {
     background-color: rgb(0, 0, 0);
 }
+
+#carritoDelete {
+    margin-left: 26px;
+}
+.contenedorParrafo {
+    float: left; 
+}
+.tituloDelete{
+  font-size: 16px;
+  color:rgb(255, 230, 0);
+}
+.contenedorImagen {
+    float: left;
+    margin-left: 10px;
+}
+
+.imagenDelete {
+    height: 24px;
+    
+}
