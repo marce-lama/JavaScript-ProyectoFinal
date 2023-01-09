@@ -18,7 +18,6 @@ let tbody = document.querySelector("#lCarrito")
 function mostrarCarrito () {
 };
     
-
 let eliminarCarrito = document.querySelector(".imagenDelete")
 
 if (eliminarCarrito.addEventListener("click", () => {
