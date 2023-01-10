@@ -61,6 +61,13 @@ function agregarProducto (idProducto) {
    listaCarrito.push (producto)
    localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito))
    span.textContent = listaCarrito.length
+   Toastify({
+
+    text: "Se agrego producto",
+    
+    duration: 1500
+    
+    }).showToast();
 }; 
 
 function eliminarProducto (idProducto) {
@@ -70,6 +77,13 @@ function eliminarProducto (idProducto) {
     listaCarrito.splice (posproducto, 1)
     localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito)) 
     span.textContent = listaCarrito.length
+    Toastify({
+
+        text: "Se elimino producto",
+        
+        duration: 1500
+        
+        }).showToast();
     }
 }
 
