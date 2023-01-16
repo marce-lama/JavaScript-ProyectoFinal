@@ -7,6 +7,7 @@ let tbody = document.querySelector("#lCarrito")
         contenedor.innerHTML = `
         <th scope="row">${a.id}</th>
         <td>${a.nombre}</td>
+        <td><a href=""><img width="25" height="25" class="deleteProducto" src="../images/Delete.png" alt=""></a></td>
         <td>\$${a.precio}</td>
         `
         tbody.appendChild(contenedor)
