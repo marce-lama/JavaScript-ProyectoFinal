@@ -92,12 +92,38 @@ body {
     height: 24px;
     
 }
-.formaPago {
+.tituloFormaPago {
     color:rgb(255, 230, 0);
     margin-top: 100px;
     margin-left: 26px;
+    font-size: 16px;
+}
+
+.metodoPago {
+    color:rgb(255, 230, 0);
+    margin-left: 26px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+.totalFormaPago {
+    color:rgb(255, 230, 0);
+    margin-left: 26px;
+    font-size: 16px;
+}
+
+#contenedorMenu {
+    width: 400px;
+    margin-left: 26px;
+    margin-top: 15px;
 }
 
 .formaPagoMenu {
-    margin-left: 24px;
+    margin-bottom: 10px;
+    background-color:rgb(68, 68, 68);
+    color: rgb(255, 230, 0);
+}
+
+.formaPagoCuotas {
+    background-color:rgb(68, 68, 68);
+    color: rgb(255, 230, 0);
 }

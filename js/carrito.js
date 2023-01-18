@@ -19,7 +19,8 @@ let tbody = document.querySelector("#lCarrito")
 
 function mostrarCarrito () {
 };
-    
+
+
 let eliminarCarrito = document.querySelector(".imagenDelete")
 
 if (eliminarCarrito.addEventListener("click", () => {
@@ -27,9 +28,9 @@ if (eliminarCarrito.addEventListener("click", () => {
 }));
 
 
+letformaPago = document.querySelector(".formaPagoMenu")
 
-    
-
-
-
-
+/*function opcionPago (formaPago) {
+    formaPago.addEventListener("click", () => {
+        if (formaPago == efectivo) 
+*/
