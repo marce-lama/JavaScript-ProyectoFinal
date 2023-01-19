@@ -5,7 +5,7 @@ const listaProductos = [
     {id:4, nombre:"Caja de Alfajores de Chocolate con Mousse de Chocolate x 6 unidades", precio: 1155, imagen: "Mouse_de_chocolate.jpg"},
     {id:5, nombre:"Caja de Alfajores Blancos rellenos con Membrillo x 6 unidades", precio: 850, imagen: "Blanco_con_membrillo.jpg"}, 
     {id:6, nombre:"Caja de Alfajores de Almendra con Dulce de Leche x 6 unidades", precio: 1300, imagen: "Alajor_de_almendras_con_dulce_de_leche.jpeg"},
-    {id:7, nombre:"Torta Conito de Chocolate con Dulde de Leche", precio: 1500, imagen: "Torta_conito_de_dulce_de_leche.jpg"},
+    {id:7, nombre:"Torta Conito de Chocolate con Dulde de Leche", precio: 1500, imagen: "Torta_conitos.jpg"},
     {id:8, nombre:"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", precio: 1000, imagen: "Copito_de_dulce_de_leche_relleno_con_chocolate_blanco.jpg"},
     {id:9, nombre:"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", precio: 1200, imagen: "Copito_de_dulce_de_leche.jpg"},
 ]
@@ -131,7 +131,7 @@ function buscarProducto2 (idBuscado, lista) {
 
 
 
-function totalRecargo (importe,recargo) {
+/*function totalRecargo (importe,recargo) {
     let total = importe * recargo;
     return total.toFixed(2); 
 }
@@ -155,6 +155,6 @@ function filtroProductos (lista, filtro) {
     let nuevaLista = lista.filter(element => element.nombre.includes (filtro));
     return nuevaLista;   
 }
-
+*/
 
 

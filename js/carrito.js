@@ -22,15 +22,60 @@ function mostrarCarrito () {
 
 
 let eliminarCarrito = document.querySelector(".imagenDelete")
-
-if (eliminarCarrito.addEventListener("click", () => {
+    eliminarCarrito.addEventListener("click", () => {
     localStorage.removeItem("listaCarrito");
-}));
+});
 
 
-letformaPago = document.querySelector(".formaPagoMenu")
+let formaPago = document.querySelector(".formaPagoMenu")
+let cuotasPago = document.querySelector(".formaPagoCuotas")
+let importeFinal = 0.0;
+    formaPago.addEventListener("change", (event) => {
+    document.querySelector(".totalFormaPago").style.display="block";
+    if (event.target.value == "-1") {
+        document.querySelector(".totalFormaPago").style.display="none";
+    }
+    if (event.target.value == "4") {
+        cuotasPago.style.display="block"
+        document.querySelector(".totalFormaPago").style.display="none";
+    } else {
+        cuotasPago.style.display="none"
+       importeFinal = importeTotal(event.target.value)
+       document.querySelector(".totalFormaPago").innerText="Su total a pagar sera de $"+importeFinal;
+    }
+    }); 
 
-/*function opcionPago (formaPago) {
-    formaPago.addEventListener("click", () => {
-        if (formaPago == efectivo) 
-*/
+    cuotasPago.addEventListener("change", (event) => {
+    document.querySelector(".totalFormaPago").style.display="block";
+    if(event.target.value == "-1"){
+        document.querySelector(".totalFormaPago").style.display="none";
+    }
+    importeFinal = importeTotalConRecargo(event.target.selectedOptions[0].getAttribute('data-recargo'))
+    document.querySelector(".totalFormaPago").innerText="Su total a pagar sera de $"+importeFinal;
+    }); 
+
+    
+
+function importeTotal (tipoPago) {
+    let valorFinal = 0.0; 
+    switch (tipoPago) {
+        case "1":  
+            valorFinal = totalCarrito
+            break;
+        case "2":
+            valorFinal = totalCarrito * 0.90
+            break;
+        case "3":
+            valorFinal = totalCarrito
+            break;       
+        default:
+            break;
+    }
+    return valorFinal.toFixed(2);
+}
+
+function importeTotalConRecargo (recargo) {
+    let totalConRecargo = totalCarrito * parseFloat(recargo);
+    return totalConRecargo.toFixed(2); 
+}
+
