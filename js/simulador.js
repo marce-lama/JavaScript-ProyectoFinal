@@ -9,6 +9,33 @@ const listaProductos = [
     {id:8, nombre:"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", precio: 1000, imagen: "Copito_de_dulce_de_leche_relleno_con_chocolate_blanco.jpg"},
     {id:9, nombre:"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", precio: 1200, imagen: "Copito_de_dulce_de_leche.jpg"},
 ]
+
+
+/*const url = "../json/data.json"; 
+fetch(url)
+.then(res => res.json())
+.then(data => mostrarProductos(data))
+
+const contenedorProd = document.querySelector("grid-principal")
+function mostrarProductos(productos) {
+    productos.forEach(prod => {
+        let contenedor = document.createElement("div"); 
+        contenedor.innerHTML=`
+        <div class="grid-producto">
+              <img src="./images/${prod.imagen}" alt="">
+              <h6 class="nombre"> ${prod.nombre}</h6>
+              <p class="precio"><strong>\$${prod.precio}</strong></p>
+              <div class="style-button">
+                <button type="button" class="btn btn-success agregar" value=${prod.id}>Agregar</button>
+                <button type="button" class="btn btn-danger eliminar" value=${prod.id}>Eliminar</button>
+              </div>
+        </div>
+        `;
+        contenedorProd.appendChild(contenedor);
+    })
+}
+*/
+
 let listaCarrito = [];
 let carrito = JSON.parse(localStorage.getItem("listaCarrito"))
 if (carrito != null && carrito.length > 0) {
@@ -17,7 +44,6 @@ if (carrito != null && carrito.length > 0) {
 
 let span = document.getElementById("span")
 span.textContent = listaCarrito.length
-
 
 let grid = document.getElementById("grid-principal")
 for (let a of listaProductos){

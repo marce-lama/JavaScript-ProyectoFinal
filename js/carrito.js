@@ -1,13 +1,15 @@
-let totalCarrito = 0; 
+let carrito = [];
+let totalCarrito = 0;
+function armarTablaCarrito () { 
 let tbody = document.querySelector("#lCarrito")   
-    let carrito = JSON.parse(localStorage.getItem("listaCarrito"))
+    carrito = JSON.parse(localStorage.getItem("listaCarrito"))
     if(carrito != null) {
     for (let a of carrito) {
         let contenedor = document.createElement("tr"); 
         contenedor.innerHTML = `
         <th scope="row">${a.id}</th>
         <td>${a.nombre}</td>
-        <td><a href=""><img width="25" height="25" class="deleteProducto" src="../images/Delete.png" alt=""></a></td>
+        <td><a href=""><img width="25" height="25" class="deleteProducto" id=${a.id} src="../images/Delete.png" alt=""></a></td>
         <td>\$${a.precio}</td>
         `
         tbody.appendChild(contenedor)
@@ -16,7 +18,8 @@ let tbody = document.querySelector("#lCarrito")
     };
 }
     document.querySelector("#totalCarrito").innerText="$" + totalCarrito; 
-
+}
+armarTablaCarrito();
 function mostrarCarrito () {
 };
 
@@ -26,6 +29,15 @@ let eliminarCarrito = document.querySelector(".imagenDelete")
     localStorage.removeItem("listaCarrito");
 });
 
+let borrarProducto = document.querySelectorAll(".deleteProducto")
+    borrarProducto.forEach(element => {
+        element.addEventListener("click", (event)=> {
+            eliminarProducto(event.target.id);
+        })
+        
+    });
+    
+
 
 let formaPago = document.querySelector(".formaPagoMenu")
 let cuotasPago = document.querySelector(".formaPagoCuotas")
@@ -34,10 +46,12 @@ let importeFinal = 0.0;
     document.querySelector(".totalFormaPago").style.display="block";
     if (event.target.value == "-1") {
         document.querySelector(".totalFormaPago").style.display="none";
+        document.querySelector(".formularioPago").style.display="none";
     }
     if (event.target.value == "4") {
         cuotasPago.style.display="block"
         document.querySelector(".totalFormaPago").style.display="none";
+        document.querySelector(".formularioPago").style.display="none";
     } else {
         cuotasPago.style.display="none"
        importeFinal = importeTotal(event.target.value)
@@ -49,6 +63,7 @@ let importeFinal = 0.0;
     document.querySelector(".totalFormaPago").style.display="block";
     if(event.target.value == "-1"){
         document.querySelector(".totalFormaPago").style.display="none";
+        document.querySelector(".formularioPago").style.display="none";
     }
     importeFinal = importeTotalConRecargo(event.target.selectedOptions[0].getAttribute('data-recargo'))
     document.querySelector(".totalFormaPago").innerText="Su total a pagar sera de $"+importeFinal;
@@ -79,3 +94,82 @@ function importeTotalConRecargo (recargo) {
     return totalConRecargo.toFixed(2); 
 }
 
+let irAPago = document.querySelector(".irAPagar")
+irAPago.addEventListener("click", ()=> {
+    let formaPagoMenu = document.querySelector(".formaPagoMenu")
+    let formaPagoCuotas = document.querySelector(".formaPagoCuotas")
+    if(formaPagoMenu.options[formaPagoMenu.selectedIndex].value == "-1" || (formaPagoMenu.options[formaPagoMenu.selectedIndex].value == "4" && formaPagoCuotas.options[formaPagoCuotas.selectedIndex].value == "-1")) {
+        Swal.fire('Seleccione una opcion correcta')
+    } else {
+        document.querySelector(".formularioPago").style.display="block"
+    }
+}); 
+
+
+
+obtenerInputs ();
+
+let btnFinalizar = document.querySelector(".btnFinalizar")
+    btnFinalizar.addEventListener("click", limpiarCarrito)
+
+function limpiarCarrito () {
+    limpiarFormulario();
+    document.querySelector(".formularioPago").style.display="none" 
+    localStorage.removeItem("listaCarrito")
+    let tabla = document.getElementById("lCarrito")
+    tabla.innerHTML="";
+    let numeroCarrito = document.getElementById("span")
+    numeroCarrito.innerText = 0;
+    armarTablaCarrito();
+}
+
+function obtenerInputs () {
+    let btnPago = document.querySelector(".btnPagar")
+    btnPago.addEventListener("click", ()=> {
+        let nombre = document.getElementById("Nombre").value;
+        let apellido = document.getElementById("Apellido").value;
+        let email = document.getElementById("E-mail").value; 
+        document.querySelector(".modal1").innerText="Gracias por su Compra " + nombre + " " + apellido + "!"
+        document.querySelector(".modal2").innerText="Su pago se realizo con exito!!!"
+        document.querySelector(".modal3").innerText="En breve recibira un mail en la casilla de correo " + email + " con el detalle del pedido"
+    } )
+}
+
+function limpiarFormulario () {
+    document.getElementById("Nombre").value = "";
+    document.getElementById("Apellido").value = "";
+    document.getElementById("Documento").value = "";
+    document.getElementById("E-mail").value = "";
+    document.getElementById("Direccion").value = "";
+    document.getElementById("Localidad").value = "";
+    document.getElementById("Telefono").value = "";
+}
+
+function eliminarProducto (idProducto) {
+    idProducto = parseInt(idProducto);
+    let posproducto = buscarProducto2(idProducto, carrito);
+    if (posproducto != -1) {
+    carrito.splice (posproducto, 1)
+    localStorage.setItem("listaCarrito", JSON.stringify(carrito)) 
+    span.textContent = carrito.length
+    Toastify({
+
+        text: "Se elimino producto",
+        
+        duration: 1500
+        
+        }).showToast();
+    }
+}
+
+function buscarProducto2 (idBuscado, lista) {
+    let contador = -1; 
+    let posicionEncontrada = -1;
+    lista.forEach(element => {
+        contador ++; 
+        if(element.id == idBuscado) {
+        posicionEncontrada = contador; 
+        }  
+    });
+    return posicionEncontrada
+}
