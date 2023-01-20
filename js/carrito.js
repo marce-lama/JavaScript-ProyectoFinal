@@ -34,11 +34,8 @@ let borrarProducto = document.querySelectorAll(".deleteProducto")
         element.addEventListener("click", (event)=> {
             eliminarProducto(event.target.id);
         })
-        
     });
     
-
-
 let formaPago = document.querySelector(".formaPagoMenu")
 let cuotasPago = document.querySelector(".formaPagoCuotas")
 let importeFinal = 0.0;
@@ -99,7 +96,7 @@ irAPago.addEventListener("click", ()=> {
     let formaPagoMenu = document.querySelector(".formaPagoMenu")
     let formaPagoCuotas = document.querySelector(".formaPagoCuotas")
     if(formaPagoMenu.options[formaPagoMenu.selectedIndex].value == "-1" || (formaPagoMenu.options[formaPagoMenu.selectedIndex].value == "4" && formaPagoCuotas.options[formaPagoCuotas.selectedIndex].value == "-1")) {
-        Swal.fire('Seleccione una opcion correcta')
+        Swal.fire('Seleccione un metodo de pago correcto')
     } else {
         document.querySelector(".formularioPago").style.display="block"
     }
@@ -117,6 +114,7 @@ function limpiarCarrito () {
     let numeroCarrito = document.getElementById("span")
     numeroCarrito.innerText = 0;
     totalCarrito=0;
+    document.querySelector(".totalFormaPago").style.display="none"
     armarTablaCarrito();
 }
 

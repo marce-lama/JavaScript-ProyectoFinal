@@ -1,13 +1,13 @@
 const listaProductos = [
-    {id:1, nombre:"Caja de Alfajores de Maicena x 6 unidades", precio: 953, imagen: "Alfajor_de_Maicena.jpg"},
-    {id:2, nombre:"Caja de Alfajores de Chocolate con Dulce de Leche x 6 unidades", precio: 976, imagen: "Alfajor_chocolate_con_dulce_de_leche.jpg"},
-    {id:3, nombre:"Caja de Alfajores Blancos con Dulce de Leche x 6 unidades", precio: 937, imagen: "Alfajor_de_chocolate_blanco_con_dulce_de_leche.jpg"},
-    {id:4, nombre:"Caja de Alfajores de Chocolate con Mousse de Chocolate x 6 unidades", precio: 1155, imagen: "Mouse_de_chocolate.jpg"},
-    {id:5, nombre:"Caja de Alfajores Blancos rellenos con Membrillo x 6 unidades", precio: 850, imagen: "Blanco_con_membrillo.jpg"}, 
-    {id:6, nombre:"Caja de Alfajores de Almendra con Dulce de Leche x 6 unidades", precio: 1300, imagen: "Alajor_de_almendras_con_dulce_de_leche.jpeg"},
-    {id:7, nombre:"Torta Conito de Chocolate con Dulde de Leche", precio: 1500, imagen: "Torta_conitos.jpg"},
-    {id:8, nombre:"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", precio: 1000, imagen: "Copito_de_dulce_de_leche_relleno_con_chocolate_blanco.jpg"},
-    {id:9, nombre:"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", precio: 1200, imagen: "Copito_de_dulce_de_leche.jpg"},
+    {id:1, nombre:"Caja de Alfajores de Maicena x 6 unidades", precio: 953, imagen: "1-maicena.jpg"},
+    {id:2, nombre:"Caja de Alfajores de Chocolate con Dulce de Leche x 6 unidades", precio: 976, imagen: "2-choco-dulce-de-leche.jpg"},
+    {id:3, nombre:"Caja de Alfajores Blancos con Dulce de Leche x 6 unidades", precio: 937, imagen: "3-blanco-dulce-de-leche.jpg"},
+    {id:4, nombre:"Caja de Alfajores de Chocolate con Mousse de Chocolate x 6 unidades", precio: 1155, imagen: "4-mousse.jpg"},
+    {id:5, nombre:"Caja de Alfajores Blancos rellenos con Membrillo x 6 unidades", precio: 850, imagen: "5-membrillo.jpg"}, 
+    {id:6, nombre:"Caja de Alfajores de Almendra con Dulce de Leche x 6 unidades", precio: 1300, imagen: "6-almendra.jpeg"},
+    {id:7, nombre:"Torta Conito de Chocolate con Dulde de Leche", precio: 1500, imagen: "7-torta-conito.jpg"},
+    {id:8, nombre:"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", precio: 1000, imagen: "8-conito-blanco.jpeg"},
+    {id:9, nombre:"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", precio: 1200, imagen: "9-conito-choco.jpeg"},
 ]
 
 
@@ -133,7 +133,7 @@ function buscarProducto2 (idBuscado, lista) {
         }  
     });
     return posicionEncontrada
-}
+};
 
 
 
@@ -147,40 +147,5 @@ function buscarProducto2 (idBuscado, lista) {
 
 
 
-
-
-
-
-
-
-// POR AHORA NO SE UTILIZA ESTE CODIGO// 
-
-
-
-/*function totalRecargo (importe,recargo) {
-    let total = importe * recargo;
-    return total.toFixed(2); 
-}
-
-function valorCuota (importe, cuotas) {
-    let cuota = importe / cuotas;
-    return cuota.toFixed(2);    
-}
-
-function menuSelector (lista) {
-    let texto = "Que productos desea agregar al carrito?\n";
-    lista.forEach(element => {
-        texto = texto + element.id +": "+ element.nombre + "= " + "$" + element.precio + "\n"
-    });
-    texto += "0: Ir a pagar";
-    texto += "\n+: Filtrar productos"
-    return (prompt(texto));
-}
-
-function filtroProductos (lista, filtro) {
-    let nuevaLista = lista.filter(element => element.nombre.includes (filtro));
-    return nuevaLista;   
-}
-*/
 
 
