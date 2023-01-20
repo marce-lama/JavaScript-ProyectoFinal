@@ -105,10 +105,6 @@ irAPago.addEventListener("click", ()=> {
     }
 }); 
 
-
-
-obtenerInputs ();
-
 let btnFinalizar = document.querySelector(".btnFinalizar")
     btnFinalizar.addEventListener("click", limpiarCarrito)
 
@@ -120,19 +116,31 @@ function limpiarCarrito () {
     tabla.innerHTML="";
     let numeroCarrito = document.getElementById("span")
     numeroCarrito.innerText = 0;
+    totalCarrito=0;
     armarTablaCarrito();
 }
 
+let btnPago = document.querySelector(".btnPagar")
+    btnPago.addEventListener("click", () => {
+        formularioObligatorio()
+    })
+
 function obtenerInputs () {
-    let btnPago = document.querySelector(".btnPagar")
-    btnPago.addEventListener("click", ()=> {
         let nombre = document.getElementById("Nombre").value;
         let apellido = document.getElementById("Apellido").value;
         let email = document.getElementById("E-mail").value; 
         document.querySelector(".modal1").innerText="Gracias por su Compra " + nombre + " " + apellido + "!"
         document.querySelector(".modal2").innerText="Su pago se realizo con exito!!!"
         document.querySelector(".modal3").innerText="En breve recibira un mail en la casilla de correo " + email + " con el detalle del pedido"
-    } )
+        document.querySelector(".btnFinalizar").style.display="block"
+    }
+
+function formularioObligatorio () {
+        if(document.getElementById("Nombre").value == "" || document.getElementById("Apellido").value == "" || document.getElementById("Documento").value == "" || document.getElementById("E-mail").value == "" || document.getElementById("Direccion").value == "" || document.getElementById("Localidad").value == "" || document.getElementById("Telefono").value == "") {
+        document.querySelector(".modal1").innerText="Campos Incompletos"
+        document.querySelector(".modal2").innerText="Por favor complete todos los campos del formulario"
+        document.querySelector(".btnFinalizar").style.display="none"
+        } else obtenerInputs ();
 }
 
 function limpiarFormulario () {
@@ -144,6 +152,8 @@ function limpiarFormulario () {
     document.getElementById("Localidad").value = "";
     document.getElementById("Telefono").value = "";
 }
+
+
 
 function eliminarProducto (idProducto) {
     idProducto = parseInt(idProducto);
