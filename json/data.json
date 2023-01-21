@@ -1,11 +1,11 @@
 [
-    {"id":1, "nombre":"Caja de Alfajores de Maicena x 6 unidades", "precio": 953, "imagen": "1-maicena.jpg"},
-    {"id":2, "nombre":"Caja de Alfajores de Chocolate con Dulce de Leche x 6 unidades", "precio": 976, "imagen": "2-choco-dulce-de-leche.jpg"},
-    {"id":3, "nombre":"Caja de Alfajores Blancos con Dulce de Leche x 6 unidades", "precio": 937, "imagen": "3-blanco-dulce-de-leche.jpg"},
-    {"id":4, "nombre":"Caja de Alfajores de Chocolate con Mousse de Chocolate x 6 unidades", "precio": 1155," imagen": "4-mousse.jpg"},
-    {"id":5, "nombre":"Caja de Alfajores Blancos rellenos con Membrillo x 6 unidades", "precio": 850, "imagen": "5-membrillo.jpg"}, 
-    {"id":6, "nombre":"Caja de Alfajores de Almendra con Dulce de Leche x 6 unidades", "precio": 1300," imagen": "6-almendra.jpeg"},
-    {"id":7, "nombre":"Torta Conito de Chocolate con Dulde de Leche", "precio": 1500," imagen": "7-torta-conito.jpg"},
-    {"id":8, "nombre":"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", "precio": 1000," imagen": "8-conito-blanco.jpeg"},
-    {"id":9, "nombre":"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", "precio": 1200," imagen": "9-conito-choco.jpeg"}
+    {"id":1, "nombre":"Caja de Alfajores de Maicena x 6 unidades", "precio": 953, "imagen": "../images/1-maicena.jpg"},
+    {"id":2, "nombre":"Caja de Alfajores de Chocolate con Dulce de Leche x 6 unidades", "precio": 976, "imagen": "../images/2-choco-dulce-de-leche.jpg"},
+    {"id":3, "nombre":"Caja de Alfajores Blancos con Dulce de Leche x 6 unidades", "precio": 937, "imagen": "../images/3-blanco-dulce-de-leche.jpg"},
+    {"id":4, "nombre":"Caja de Alfajores de Chocolate con Mousse de Chocolate x 6 unidades", "precio": 1155," imagen": "../images/4-mousse.jpg"},
+    {"id":5, "nombre":"Caja de Alfajores Blancos rellenos con Membrillo x 6 unidades", "precio": 850, "imagen": "../images/5-membrillo.jpg"}, 
+    {"id":6, "nombre":"Caja de Alfajores de Almendra con Dulce de Leche x 6 unidades", "precio": 1300," imagen": "../images/6-almendra.jpeg"},
+    {"id":7, "nombre":"Torta Conito de Chocolate con Dulde de Leche", "precio": 1500," imagen": "../images/7-torta-conito.jpg"},
+    {"id":8, "nombre":"Caja de Copitos con Chocolate Blanco con Dulce de Leche x 6 unidades", "precio": 1000," imagen": "../images/8-conito-blanco.jpeg"},
+    {"id":9, "nombre":"Caja de Copitos de Chocolate con Dulce de Leche x 6 unidades", "precio": 1200," imagen": "../images/9-conito-choco.jpeg"}
 ]

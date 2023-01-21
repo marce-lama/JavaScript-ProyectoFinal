@@ -36,6 +36,7 @@ body {
 .grid-producto:hover {
     transform: scale(1.1);
 }
+
 .grid-catalogo h6 {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
