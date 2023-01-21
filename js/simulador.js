@@ -1,7 +1,7 @@
 let listaProductos=[]
 
 const pedirDatos = async () => {
-    const resp = await fetch("./json/data.json")
+    const resp = await fetch("json/data.json")
     const data = await resp.json()
     mostrarProductos(data)
     
